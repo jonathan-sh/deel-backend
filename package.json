@@ -10,10 +10,13 @@
   },
   "scripts": {
     "start": "nodemon ./src/server.js",
-    "seed": "node ./scripts/seedDb.js"
+    "seed": "node ./scripts/seedDb.js",
+    "lint": "eslint . --ext .js --fix"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.20"
   },
   "engines": {
