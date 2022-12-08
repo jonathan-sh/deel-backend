@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { Op } from 'sequelize';
 
 import { getProfile } from '../middleware/getProfile.js';
 import { Contract } from '../model/index.js';
@@ -8,11 +9,15 @@ const path = '/contracts';
 
 route.use(getProfile);
 
-route.get(`/${path}/:id'`, async (req, res) => {
+route.get(`${path}/:id`, async (req, res) => {
     const { id } = req.params;
-    const contract = await Contract.findOne({ where: { id } });
-    if (!contract) return res.status(404).end();
-    res.json(contract);
+    const { id: profileId } = req.profile;
+    const where =  { id, [Op.or]:[{ContractorId: profileId}, {ClientId: profileId}] };
+    const contract = await Contract.findOne({where});
+    if (!contract) return res.status(404).send();
+    res.send(contract);
 });
+
+
 
 export default route;
