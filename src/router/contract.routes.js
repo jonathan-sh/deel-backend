@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import { getProfile } from '../middleware/getProfile.js';
-import { getContract } from '../service/contract.js';
+import { getContract, getNotFinishedContracts } from '../service/contract.js';
 
 const route = Router();
 const path = '/contracts';
@@ -15,6 +15,15 @@ route.get(`${path}/:id`, async (req, res) => {
     if (!contract) return res.status(404).send();
     res.send(contract);
 });
+
+route.get(`${path}`, async (req, res) => {
+    const { id: profileId } = req.profile;
+    const contracts = await getNotFinishedContracts(profileId);
+    if (!contracts) return res.status(404).send();
+    res.send(contracts);
+});
+
+
 
 
 
