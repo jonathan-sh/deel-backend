@@ -23,6 +23,6 @@ describe('Getting not finished contracts', () => {
     test('It should not response the contracts', async () => {
         const contracts = await getNotFinishedContracts(-1);
         expect(Array.isArray(contracts)).toBeTruthy();
-        expect(contracts.length).toBeFalsy();
+        expect(contracts).toHaveLength(0);
     });
 });
