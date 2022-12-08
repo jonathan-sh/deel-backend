@@ -1,4 +1,4 @@
-import { app } from './app.js';
+import { app } from './config/express.js';
 
 init();
 
