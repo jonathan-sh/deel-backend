@@ -3,7 +3,7 @@
         "es2021": true,
         "node": true
     },
-    "extends": "google",
+    "extends": "eslint:recommended",
     "overrides": [
     ],
     "parserOptions": {
@@ -11,5 +11,21 @@
         "sourceType": "module"
     },
     "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
     }
 }
