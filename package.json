@@ -19,5 +19,6 @@
   "engines": {
     "node": ">=10.16.3"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "type": "module"
 }
