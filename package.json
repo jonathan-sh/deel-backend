@@ -11,14 +11,16 @@
   "scripts": {
     "start": "nodemon ./src/server.js",
     "seed": "node ./scripts/seedDb.js",
-    "lint": "eslint . --ext .js --fix"
+    "lint": "eslint . --ext .js --fix",
+    "test": " node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "fill-db-run-test": "npm run seed && npm run test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
     "eslint": "^8.29.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-import": "^2.26.0",
+    "jest": "^29.3.1",
     "nodemon": "^2.0.20"
   },
   "engines": {

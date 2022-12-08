@@ -5,4 +5,6 @@ const sequelize = new Sequelize({
     storage: './database.sqlite3',
 });
 
-export { sequelize };
+const closeDbConnection = () => sequelize.close();
+
+export { sequelize, closeDbConnection };
