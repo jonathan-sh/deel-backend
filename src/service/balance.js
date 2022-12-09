@@ -53,8 +53,10 @@ const deposit = async (profileId, amountToDeposit) => {
         await transaction.commit();
         return { deposited: false, cause: 'limit exceeded', limitAllow };
     } catch (error) {
-        await transaction.rollback();
-        await deposit(profileId, amountToDeposit);
+        setTimeout(async () => {
+            await transaction.rollback();
+            await deposit(profileId, amountToDeposit); 
+        }, 200);
     }
 
 };

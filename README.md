@@ -61,7 +61,7 @@ Many things happening... <br/>
 After:<br/>
 ![afeter](https://user-images.githubusercontent.com/15783623/206600830-cb3e0504-ea48-4f7c-b3f4-9e3c81f0fe93.png)
 
-Results:<br/>
+Results without the improvements: 10.732 seconds 🙁<br/>
 <pre>
 This is ApacheBench, Version 2.3 <$Revision: 1901567 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -120,3 +120,55 @@ Things I know can improve this result:
 - improve retry strategy;
 
 Another thing that can also be improved is the entity relationship and the rest layer routing.
+
+Results with the improvements: 0.878 seconds 🔥<br/>
+<pre>
+This is ApacheBench, Version 2.3 <$Revision: 1901567 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 127.0.0.1 (be patient).....done
+
+
+Server Software:        
+Server Hostname:        127.0.0.1
+Server Port:            3001
+
+Document Path:          /balances/deposit/2
+Document Length:        62 bytes
+
+Concurrency Level:      10
+Time taken for tests:   0.878 seconds
+Complete requests:      10
+Failed requests:        8
+   (Connect: 0, Receive: 0, Length: 8, Exceptions: 0)
+Non-2xx responses:      8
+Keep-Alive requests:    2
+Total transferred:      1434 bytes
+Total body sent:        1950
+HTML transferred:       124 bytes
+Requests per second:    11.40 [#/sec] (mean)
+Time per request:       877.575 [ms] (mean)
+Time per request:       87.758 [ms] (mean, across all concurrent requests)
+Transfer rate:          1.60 [Kbytes/sec] received
+                        2.17 kb/s sent
+                        3.77 kb/s total
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.1      0       0
+Processing:    72  530 179.4    553     805
+Waiting:       72  529 179.4    553     805
+Total:         72  530 179.4    553     805
+
+Percentage of the requests served within a certain time (ms)
+  50%    553
+  66%    554
+  75%    554
+  80%    554
+  90%    805
+  95%    805
+  98%    805
+  99%    805
+ 100%    805 (longest request)
+</pre>
