@@ -1,23 +1,38 @@
 # DEEL BACKEND TASK
 
-| tests    | collection       |  code ref challenge                              |
+| tests    | collection       |  code challenge ref                             |
 |----------|-------------     |------                                 |
-|[![Run Test](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml)      | [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b5c0ac1bbff6f7c2ae6?action=collection%2Fimport)  | [challenge]()        
+|[![Run Test](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml)      | [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b5c0ac1bbff6f7c2ae6?action=collection%2Fimport)  | [challenge](https://github.com/jonathan-sh/deel-backend/blob/main/CC.md)        
 
+## quick explanation: 
+<pre>
+.
+├── scripts
+│   └── seedDb.js //to hydrated the db 
+├── src
+│   ├── config //config rules
+│   ├── middleware //the middlewares
+│   ├── model //model rules
+│   ├── router //router rules
+│   ├── server.js //entry point
+│   └── service //service rules
+└── test //jest files
+    └── apache //to run apache ab
+</pre>
 
-### to run
+## to run
 
 ```sh
 npm run start
 ```
 
-### to feed the data base
+## to feed the data base
 
 ```sh
 npm run seed
 ```
 
-### to test
+## to test
 
 ```sh
 npm run test
@@ -27,7 +42,7 @@ npm run fill-db-run-test
 
 ![image](https://user-images.githubusercontent.com/15783623/206600411-35d7af4d-1e78-4f2a-b80c-872584dfac3a.png)
 
-### apache ab
+## apache ab
 
 ```sh
 chmod +x ./test/apache/ab.sh && ./test/apache/ab.sh
