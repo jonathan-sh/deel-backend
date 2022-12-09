@@ -1,5 +1,7 @@
 # DEEL BACKEND TASK
 
+
+
 | tests    | collection       |  code challenge ref                             |
 |----------|-------------     |------                                 |
 |[![Run Test](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml)      | [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b5c0ac1bbff6f7c2ae6?action=collection%2Fimport)  | [challenge](https://github.com/jonathan-sh/deel-backend/blob/main/CC.md)        
@@ -114,5 +116,7 @@ I know, I know, the time could be better. 😬 <br>
 I thought of a few reasons for this but my knowledge of Sequelize those a total of 4 hours.  <br>
 Things I know can improve this result:
 
-- pool connectios;
+- pool connections;
 - improve retry strategy;
+
+Another thing that can also be improved is the entity relationship and the rest layer routing.
