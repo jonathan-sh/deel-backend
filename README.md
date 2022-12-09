@@ -1,7 +1,10 @@
 # DEEL BACKEND TASK
-[![Run Test](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml)
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b5c0ac1bbff6f7c2ae6?action=collection%2Fimport)
+| tests    | collection       |  code ref challenge                              |
+|----------|-------------     |------                                 |
+|[![Run Test](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/jonathan-sh/deel-backend/actions/workflows/test.yml)      | [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/7b5c0ac1bbff6f7c2ae6?action=collection%2Fimport)  | [challenge]()        
+
+
 ### to run
 
 ```sh
