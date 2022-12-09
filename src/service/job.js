@@ -1,6 +1,6 @@
 import { Op, Transaction } from 'sequelize';
-import { Job, Contract, Profile } from '../model/index.js';
 
+import { Job, Contract, Profile } from '../model/index.js';
 import { sequelize } from '../config/sequelize.js';
 
 const getUnpaidJobs = async  (profileId) => {
@@ -35,7 +35,7 @@ const payJob = async  (profileId, jobId) => {
         const job = await Job.findOne({where: jobFilter, lock, transaction});
         if(!job){
             await transaction.commit();
-            
+
             return 'job paid or not found';
         }
     

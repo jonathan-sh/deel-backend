@@ -1,4 +1,5 @@
 import { Op } from 'sequelize';
+
 import { Contract } from '../model/index.js';
 
 const getContract = async  (contractId, profileId) => {

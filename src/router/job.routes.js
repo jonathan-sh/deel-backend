@@ -6,7 +6,7 @@ import { getUnpaidJobs, payJob } from '../service/job.js';
 const route = Router();
 const path = '/jobs';
 
-route.use(getProfile);
+route.use(path, getProfile);
 
 route.get(`${path}/unpaid`, async (req, res) => {
     const { id: profileId } = req.profile;

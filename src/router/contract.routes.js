@@ -6,7 +6,7 @@ import { getContract, getNotFinishedContracts } from '../service/contract.js';
 const route = Router();
 const path = '/contracts';
 
-route.use(getProfile);
+route.use(path, getProfile);
 
 route.get(`${path}/:id`, async (req, res) => {
     const { id: contractId } = req.params;
