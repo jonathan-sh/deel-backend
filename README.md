@@ -41,8 +41,8 @@ npm run test
 or
 npm run fill-db-run-test
 ```
+![image](https://user-images.githubusercontent.com/15783623/206928194-d7b23d99-92f4-41f4-99b9-fc7eb8500a26.png)
 
-![image](https://user-images.githubusercontent.com/15783623/206600411-35d7af4d-1e78-4f2a-b80c-872584dfac3a.png)
 
 ## apache ab
 
