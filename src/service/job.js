@@ -53,11 +53,14 @@ const payJob = async  (profileId, jobId) => {
         }
 
         await transaction.commit();
-        
         return 'insufficient balance :(';
     } catch (error) {
         await transaction.rollback();
-        await payJob(profileId, jobId);
+        return new Promise((resolve)=>{
+            setTimeout(() => {
+                resolve(deposit(profileId, amountToDeposit)); 
+            }, 200);
+        });
     }
 
 };

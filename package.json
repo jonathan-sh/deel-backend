@@ -12,7 +12,7 @@
     "start": "nodemon ./src/server.js",
     "seed": "node ./scripts/seedDb.js",
     "lint": "eslint . --ext .js --fix",
-    "test": " node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "fill-db-run-test": "npm run seed && npm run test"
   },
   "devDependencies": {

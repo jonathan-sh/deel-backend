@@ -37,9 +37,11 @@ const deposit = async (profileId, amountToDeposit) => {
             lock,
             transaction
         });
+        
         const jobsTotalPrice = jobs.map(it => new Number(it['price'] || 0)).reduce((total, item) => total + item, 0);
 
-        const limitAllow = jobsTotalPrice * LIMIT_PERCENTAGE;
+        const limitAllow = new Number(jobsTotalPrice) * LIMIT_PERCENTAGE;
+
         if (amountToDeposit <= limitAllow) {
             const profileFilter = { id : profileId };
             const profile = await Profile.findOne({where: profileFilter, lock, transaction});
@@ -53,10 +55,12 @@ const deposit = async (profileId, amountToDeposit) => {
         await transaction.commit();
         return { deposited: false, cause: 'limit exceeded', limitAllow };
     } catch (error) {
-        setTimeout(async () => {
-            await transaction.rollback();
-            await deposit(profileId, amountToDeposit); 
-        }, 200);
+        await transaction.rollback();
+        return new Promise((resolve)=>{
+            setTimeout(() => {
+                resolve(deposit(profileId, amountToDeposit)); 
+            }, 200);
+        });
     }
 
 };

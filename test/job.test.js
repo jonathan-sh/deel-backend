@@ -1,4 +1,7 @@
+import {jest} from '@jest/globals';
+
 import { getUnpaidJobs, payJob } from '../src/service/job.js';
+jest.useFakeTimers();
 
 describe('Getting unpaid jobs', () => {
     test('It should response the jobs', async () => {
@@ -16,13 +19,13 @@ describe('Getting unpaid jobs', () => {
 
 describe('Paying a jobs', () => {
     test('It should pay the job', async () => {
-        const paid = await payJob(1, 2);
+        const paid = await payJob(2, 3);
         expect(paid).toBe('paid');
     });
 
 
     test('It should not even found the job', async () => {
-        const paid = await payJob(8, 2);
+        const paid = await payJob(-1, 3);
         expect(paid).toBe('job paid or not found');
     });
 

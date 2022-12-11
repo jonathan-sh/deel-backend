@@ -5,5 +5,6 @@
 
 export default {
     clearMocks: true,
-    testTimeout:9000
+    testTimeout:10000,
+    collectCoverage:true
 };
