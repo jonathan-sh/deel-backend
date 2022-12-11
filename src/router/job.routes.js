@@ -15,7 +15,7 @@ route.get(`${path}/unpaid`, async (req, res) => {
     res.send(jobs);
 });
 
-route.get(`${path}/:job_id/pay`, async (req, res) => {
+route.post(`${path}/:job_id/pay`, async (req, res) => {
     const { id: profileId } = req.profile;
     const { job_id: jobId } = req.params;
     const jobs = await payJob(profileId, jobId);

@@ -45,7 +45,7 @@ const payJob = async  (profileId, jobId) => {
         const jobPrice =job['price'];
     
         if(profileBalance>jobPrice){
-            await Job.update({paid: true}, { where: jobFilter, lock, transaction});
+            await Job.update({paid: true, paymentDate: new Date()}, { where: jobFilter, lock, transaction});
             await Profile.update({balance: profileBalance-jobPrice}, { where: profileFilter, lock, transaction});
             await transaction.commit();
             

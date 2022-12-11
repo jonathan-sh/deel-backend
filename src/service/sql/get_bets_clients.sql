@@ -1,0 +1,12 @@
+WITH 
+PAID_JOBS AS (SELECT * FROM Jobs WHERE paid NOTNULL AND paymentDate > :start  AND paymentDate < :end ),
+BUSSINES AS (SELECT * FROM Contracts WHERE id IN (SELECT ContractId FROM PAID_JOBS)),
+BOSSES AS (SELECT * FROM  Profiles WHERE id in (SELECT ClientId FROM BUSSINES))
+SELECT 
+BOSSES.firstName, 
+BOSSES.lastName,
+SUM(PAID_JOBS.price) AS price
+FROM BOSSES, BUSSINES, PAID_JOBS
+WHERE BOSSES.ID = BUSSINES.ClientId AND BUSSINES.ID = PAID_JOBS.ContractId
+GROUP BY firstName, lastName
+ORDER BY price DESC
