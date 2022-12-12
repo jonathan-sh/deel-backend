@@ -12,6 +12,7 @@ what can we improve:
 - migrate the project to Typescript;
 - migrate two raw queires to usei Model interfaces;
 - use [increment function](https://sequelize.org/docs/v6/core-concepts/model-querying-basics/#increment-decrement) to update balance;
+- currency standardization;
 
 
 | tests    | collection       |  code challenge ref                             |
