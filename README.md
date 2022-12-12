@@ -1,5 +1,17 @@
 # DEEL BACKEND TASK
 
+what was done:
+
+- project architecture quick refac (MVC) ✓
+- implementation of seven tasks ✓
+- added unit tests (jest) ✓
+- added concurrence benchmark tests (apache ab) ✓
+
+what can we improve: 
+
+- migrate the project to Typescript;
+- migrate two raw queires to usei Model interfaces;
+- use [increment function](https://sequelize.org/docs/v6/core-concepts/model-querying-basics/#increment-decrement) to update balance;
 
 
 | tests    | collection       |  code challenge ref                             |
